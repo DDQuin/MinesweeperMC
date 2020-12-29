@@ -1,0 +1,12 @@
+main: me.ddquin.minesweeper.MinesweeperPlugin
+name: MinesweeperMC
+version: 1.0
+author: DDQuin
+api-version: 1.16
+commands:
+  minesweeper:
+    description: Commands to start minesweeper
+    permission: ms.play
+    permission-message: "§cSorry, you don't have the permssion to run this command"
+    aliases:
+      - ms
