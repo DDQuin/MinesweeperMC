@@ -24,10 +24,12 @@ public class MinesweeperPlugin extends JavaPlugin {
     }
 
     public void sendHelp(Player p) {
+        p.sendMessage(ChatColor.GRAY + "----------" + ChatColor.GOLD + "Minesweeper" + ChatColor.GRAY + "----------");
         p.sendMessage(ChatColor.GREEN + "/ms play [number] - Continue a Minesweeper game if currently in one or start a Minesweeper game with the given number of mines, if blank it will default to 5.");
         p.sendMessage(ChatColor.GREEN + "/ms quit - Quit the current minesweeper game.");
         p.sendMessage(ChatColor.GREEN + "/ms help - Show this help message");
         p.sendMessage(ChatColor.GREEN + "Plugin created by DDQuin");
+        p.sendMessage(ChatColor.GRAY + "-------------------------------");
     }
 
 
@@ -189,7 +191,7 @@ public class MinesweeperPlugin extends JavaPlugin {
         }
         ItemStack item = new ItemStack(mat, tile.getMinesAdjacent());
         ItemMeta meta = item.getItemMeta();
-        meta.setDisplayName(tile.getMinesAdjacent() + " mines adjacent");
+        meta.setDisplayName(tile.getMinesAdjacent() + (tile.getMinesAdjacent() == 1 ? " mine adjacent" : " mines adjacent"));
         item.setItemMeta(meta);
         return item;
     }
